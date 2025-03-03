@@ -1,0 +1,6 @@
+dist/**
+node_modules/**
+.yarn/**
+jupyterlab_autologout/**
+lib/**
+*-workspace

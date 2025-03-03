@@ -1,0 +1,14 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: v4.3.8
+_src_path: https://github.com/jupyterlab/extension-template
+author_email: ''
+author_name: CS-Group
+has_binder: false
+has_settings: false
+kind: frontend
+labextension_name: autologout-labextension
+project_short_description: Redirects to /hub/logout when inactive
+python_name: autologout_labextension
+repository: <repository
+test: false
+
