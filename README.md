@@ -14,6 +14,35 @@ Redirects to /hub/logout when inactive
 
 - JupyterLab >= 4.0.0
 
+## Build
+
+```bash
+python3.11 -m venv .venv
+. .venv/bin/activate
+pip install build
+python -m build
+```
+
+After the build, the assets may not have been copied to dist properly. If not, do the following:
+
+```bash
+sh getStaticFiles.sh
+```
+
+Find the section in the pyproject.toml where it says "REPLACE_SHARED_DATA"
+Remove old assets, and replace them with the output from above.
+
+then rerun the build
+
+```bash
+python -m build
+```
+
+The output build files are in `dist/`
+
+using `twine` you can deploy it to pypi repo. If you're working in a dev environment, you can use [devpi](https://github.com/devpi/devpi) as a local pypi repository.
+
+
 ## Install
 
 To install the extension, execute:
