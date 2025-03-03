@@ -1,6 +1,6 @@
 # JupyterLab-Autologout Overview
 
-This Module is a port/rework/migration of CG-Group's autologout-labextension to jupyterlab's new extension in the form of prebuilt packages that can be installed using `pip`
+This Module is a port/rework/migration of CS-Group's autologout-labextension to jupyterlab's new extension in the form of prebuilt packages that can be installed using `pip`
 
 [CS-Group's autologout-labextension](https://github.com/CNES/autologout-labextension)
 
