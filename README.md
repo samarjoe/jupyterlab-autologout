@@ -1,6 +1,6 @@
 # JupyterLab-Autologout Overview
 
-This Module is a port/rework/migration of CG-Group's autologout-labextension to jupyterlab's new extension in the form of prebuilt packages that can be installed using `pip`
+This Module is a port/rework/migration of CS-Group's autologout-labextension to jupyterlab's new extension in the form of prebuilt packages that can be installed using `pip`
 
 [CS-Group's autologout-labextension](https://github.com/CNES/autologout-labextension)
 
@@ -14,6 +14,20 @@ Redirects to /hub/logout when inactive
 
 - JupyterLab >= 4.0.0
 
+## Build
+
+```bash
+python3.11 -m venv .venv
+. .venv/bin/activate
+pip install build
+./build.sh -c
+```
+
+The output build files are in `dist/`
+
+using `twine` you can deploy it to pypi repo. If you're working in a dev environment, you can use [devpi](https://github.com/devpi/devpi) as a local pypi repository.
+
+
 ## Install
 
 To install the extension, execute:
@@ -21,6 +35,19 @@ To install the extension, execute:
 ```bash
 pip install jupyterlab_autologout
 ```
+
+## Configuration Settings
+To update the configuration (Linux/Mac) for now
+
+```bash
+# Update json values in this location
+ vim share/jupyter/labextensions/jupyterlab_autologout/static/logout_conf.json
+
+# Run this script and it will find the javascript static files to patch new values in.
+# The backup of original config will be moved to share/jupyter/labextensions/jupyterlab_autologout/bak/<filename>.bak
+ sh share/jupyter/labextensions/jupyterlab_autologout/scripts/update_settings.sh
+```
+
 
 ## Uninstall
 

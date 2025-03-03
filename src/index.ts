@@ -28,40 +28,28 @@ const plugin: JupyterFrontEndPlugin<void> = {
               so this is a quick and dirty hack for the extension.          
     */
 
-    var logout_time = Number(config.logout_time.split("_")[2])
+    var logout_time = Number(config.logout_time)
 
     // this works since underscores are not allowed in domain names per RFC 1035
-    var ignored_url = config.ignored_url.split('_')[2].toString()
+    var ignored_url = config.ignored_url.toString()
+    var logout_url = config.logout_url.toString()
     var timeoutInMiliseconds = logout_time * 1000; // Convert in miliseconds
-
-    /**
-     * TODO:
-     *  extend the config: 
-      {
-        "logout_time": "logout_time_3600",
-        "logout_url": "logout_url_/hub/logout",
-        "ignored_url": "ignored_url_jupyter-url.example.com"
-      }
-      var logout_url = config.logout_url.split('_')[2].toString() // for jupyterlab vanilla '/logout'
-
-      Also Re-Work the substitution to use the keys for the JSON String.
-      They are no longer compiled by webpack.
-
-      TO Rework that, I'll no longer need the fancy splitting on magic strings.
-     */
 
     var timeoutId: number;
     var lastTrigeredTime = 0;
 
     function startTimer() {
-      console.log("[autologout] start timer set at ", Date.now(), " with timeoutInMilliseconds set to ", timeoutInMiliseconds);
+      //Debug
+      //console.log("[autologout] start timer set at ", Date.now(), " with timeoutInMilliseconds set to ", timeoutInMiliseconds);
       timeoutId = window.setTimeout(doInactive, timeoutInMiliseconds);
     }
 
     function resetTimer() {
       // Timer reset every 10 seconds on event trigered
       if (Date.now() - lastTrigeredTime > 10000) {
-        console.log("[autologout] logout timer reset at ", Date.now());
+        //Debug
+        //console.log("[autologout] logout timer reset at ", Date.now());
+        console.log("[autologout] logout timer reset")
         lastTrigeredTime = Date.now();
         window.clearTimeout(timeoutId);
         startTimer();
@@ -69,10 +57,8 @@ const plugin: JupyterFrontEndPlugin<void> = {
     }
 
     function doInactive() {
-      // this redirect isn't working and I have no idea why...
-      // I need to see if the timeouts are really working or not.
       console.log("[autologout] logout trigered due to user inactivity");
-      window.location.href = "/hub/logout";
+      window.location.href = logout_url;
     }
 
     function setupTimers () {

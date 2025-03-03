@@ -4,3 +4,4 @@ node_modules/**
 jupyterlab_autologout/**
 lib/**
 *-workspace
+push_to_repo.sh
