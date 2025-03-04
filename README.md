@@ -20,7 +20,7 @@ Redirects to /hub/logout when inactive
 python3.11 -m venv .venv
 . .venv/bin/activate
 pip install build
-python -m build
+./build.sh -c
 ```
 
 After the build, the assets may not have been copied to dist properly. If not, do the following:
