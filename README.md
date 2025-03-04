@@ -36,6 +36,7 @@ To install the extension, execute:
 pip install jupyterlab_autologout
 ```
 
+## Configuration Settings
 To update the configuration (Linux/Mac) for now
 
 ```bash
