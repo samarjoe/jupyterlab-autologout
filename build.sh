@@ -4,7 +4,7 @@
 # first build for the assets
 # second build after assets are created, so we can copy them into
 # pyproject.toml via the .jinja2 template.
-if [ $1 == '-c' ];then
+if [ "$1" == '-c' ];then
   if [ -e  jupyterlab_autologout/labextension/static/style.js ];then
 		rm jupyterlab_autologout/labextension/static/style.js
     python -m build

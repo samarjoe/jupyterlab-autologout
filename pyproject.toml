@@ -39,10 +39,11 @@ exclude = [".github", "binder"]
 
 [tool.hatch.build.targets.wheel.shared-data]
 
+"jupyterlab_autologout/labextension/static/style.js" = "share/jupyter/labextensions/jupyterlab_autologout/static/style.js" 
 "jupyterlab_autologout/labextension/static/728.239eaca8c5828469484f.js" = "share/jupyter/labextensions/jupyterlab_autologout/static/728.239eaca8c5828469484f.js" 
 "jupyterlab_autologout/labextension/static/third-party-licenses.json" = "share/jupyter/labextensions/jupyterlab_autologout/static/third-party-licenses.json" 
-"jupyterlab_autologout/labextension/static/614.8031a64c46b92e7e86ba.js" = "share/jupyter/labextensions/jupyterlab_autologout/static/614.8031a64c46b92e7e86ba.js" 
-"jupyterlab_autologout/labextension/static/remoteEntry.565f7844bcbea86c25cb.js" = "share/jupyter/labextensions/jupyterlab_autologout/static/remoteEntry.565f7844bcbea86c25cb.js" 
+"jupyterlab_autologout/labextension/static/remoteEntry.d34e57fafd393f33d1f7.js" = "share/jupyter/labextensions/jupyterlab_autologout/static/remoteEntry.d34e57fafd393f33d1f7.js" 
+"jupyterlab_autologout/labextension/static/614.03b9b8c4c1e208715bef.js" = "share/jupyter/labextensions/jupyterlab_autologout/static/614.03b9b8c4c1e208715bef.js" 
 
 "jupyterlab_autologout/labextension/package.json" = "share/jupyter/labextensions/jupyterlab_autologout/package.json"
 "lib/logout_conf.json" = "share/jupyter/labextensions/jupyterlab_autologout/static/logout_conf.json"
