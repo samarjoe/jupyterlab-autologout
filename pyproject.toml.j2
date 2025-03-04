@@ -38,11 +38,8 @@ artifacts = ["jupyterlab_autologout/labextension","lib", "scripts"]
 exclude = [".github", "binder"]
 
 [tool.hatch.build.targets.wheel.shared-data]
-
-"jupyterlab_autologout/labextension/static/728.239eaca8c5828469484f.js" = "share/jupyter/labextensions/jupyterlab_autologout/static/728.239eaca8c5828469484f.js" 
-"jupyterlab_autologout/labextension/static/third-party-licenses.json" = "share/jupyter/labextensions/jupyterlab_autologout/static/third-party-licenses.json" 
-"jupyterlab_autologout/labextension/static/614.8031a64c46b92e7e86ba.js" = "share/jupyter/labextensions/jupyterlab_autologout/static/614.8031a64c46b92e7e86ba.js" 
-"jupyterlab_autologout/labextension/static/remoteEntry.565f7844bcbea86c25cb.js" = "share/jupyter/labextensions/jupyterlab_autologout/static/remoteEntry.565f7844bcbea86c25cb.js" 
+{% for file in files %}
+"jupyterlab_autologout/labextension/static/{{file}}" = "share/jupyter/labextensions/jupyterlab_autologout/static/{{file}}" {% endfor %}
 
 "jupyterlab_autologout/labextension/package.json" = "share/jupyter/labextensions/jupyterlab_autologout/package.json"
 "lib/logout_conf.json" = "share/jupyter/labextensions/jupyterlab_autologout/static/logout_conf.json"
