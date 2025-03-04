@@ -23,21 +23,6 @@ pip install build
 ./build.sh -c
 ```
 
-After the build, the assets may not have been copied to dist properly. If not, do the following:
-
-```bash
-sh getStaticFiles.sh
-```
-
-Find the section in the pyproject.toml where it says "REPLACE_SHARED_DATA"
-Remove old assets, and replace them with the output from above.
-
-then rerun the build
-
-```bash
-python -m build
-```
-
 The output build files are in `dist/`
 
 using `twine` you can deploy it to pypi repo. If you're working in a dev environment, you can use [devpi](https://github.com/devpi/devpi) as a local pypi repository.
