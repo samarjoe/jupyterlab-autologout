@@ -36,6 +36,18 @@ To install the extension, execute:
 pip install jupyterlab_autologout
 ```
 
+To update the configuration (Linux/Mac) for now
+
+```bash
+# Update json values in this location
+ vim share/jupyter/labextensions/jupyterlab_autologout/static/logout_conf.json
+
+# Run this script and it will find the javascript static files to patch new values in.
+# The backup of original config will be moved to share/jupyter/labextensions/jupyterlab_autologout/bak/<filename>.bak
+ sh share/jupyter/labextensions/jupyterlab_autologout/scripts/update_settings.sh
+```
+
+
 ## Uninstall
 
 To remove the extension, execute:
